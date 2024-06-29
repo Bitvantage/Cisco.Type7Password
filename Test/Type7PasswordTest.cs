@@ -61,5 +61,13 @@ namespace Test
 
             Assert.That(password1.EncryptedPassword, Is.Not.EqualTo(password2.EncryptedPassword));
         }
+
+        [Test]
+        public void Example01()
+        {
+            var type7Password = Type7Password.Encrypt("Not very secure");
+            Console.WriteLine(type7Password.Password);                      // Not very secure
+            Console.WriteLine(type7Password.EncryptedPassword);             // 080F435A490F00050B4B1F01293E362D
+        }
     }
 }
